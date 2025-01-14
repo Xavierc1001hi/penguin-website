@@ -1,48 +1,14 @@
-body {
-  background: #90D5FF;
-  color: #FFA500;
-  padding: 25px;
-  font-family: sans-serif;
-}
-.button {
-  background-color: #0000FF;
-  border: none;
-  color: white;
-  padding: 1px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+document.querySelector(".button").addEventListener("click", function() {
+            window.location.href = ""; // 
+        });
 
-body {
-  background: #90D5FF;
-  color: #FFA500;
-  padding: 25px;
-  font-family: sans-serif;
-}
-.button {
-  background-color: #0000FF;
-  border: none;
-  color: white;
-  padding: 1px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-#map {
-  height: 100%;
-}
+let map;
 
-/*
- * Optional: Makes the sample page fill the window.
- */
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+async function initMap() {
+  const { Map } = await google.maps.importLibrary("maps");
+
+  map = new Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
 }
